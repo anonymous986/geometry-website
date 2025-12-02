@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geometry Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Calculate volume and surface area of common shapes">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-row">
+      <div class="brand">
+        <h1 class="app-brand">Geometry Calculator</h1>
+      </div>
+
+      <nav class="mode-nav" aria-label="calculation mode">
+        <button class="mode-item active" data-mode="volume">Volume</button>
+        <button class="mode-item" data-mode="surface">Surface Area</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <h2 class="title">Choose a shape and enter dimensions</h2>
+
+    <section class="cards" id="cards">
+
+      <article class="card" data-shape="cube">
+        <div class="card-header">Cube</div>
+        <div class="card-body">
+          <label>Side (s): <input type="number" class="input" name="s" min="0" step="any" placeholder="e.g. 3"></label>
+          <button class="calc-btn">Calculate</button>
+          <div class="result"></div>
+        </div>
+      </article>
+
+      <article class="card" data-shape="sphere">
+        <div class="card-header">Sphere</div>
+        <div class="card-body">
+          <label>Radius (r): <input type="number" class="input" name="r" min="0" step="any" placeholder="e.g. 2.5"></label>
+          <button class="calc-btn">Calculate</button>
+          <div class="result"></div>
+        </div>
+      </article>
+
+      <article class="card" data-shape="cylinder">
+        <div class="card-header">Cylinder</div>
+        <div class="card-body">
+          <label>Radius (r): <input type="number" class="input" name="r" min="0" step="any" placeholder="e.g. 1.5"></label>
+          <label>Height (h): <input type="number" class="input" name="h" min="0" step="any" placeholder="e.g. 5"></label>
+          <button class="calc-btn">Calculate</button>
+          <div class="result"></div>
+        </div>
+      </article>
+
+      <article class="card" data-shape="cone">
+        <div class="card-header">Cone</div>
+        <div class="card-body">
+          <label>Radius (r): <input type="number" class="input" name="r" min="0" step="any" placeholder="e.g. 2"></label>
+          <label>Height (h): <input type="number" class="input" name="h" min="0" step="any" placeholder="e.g. 4"></label>
+          <button class="calc-btn">Calculate</button>
+          <div class="result"></div>
+        </div>
+      </article>
+
+      <article class="card" data-shape="rectprism">
+        <div class="card-header">Rectangular Prism</div>
+        <div class="card-body">
+          <label>Length (l): <input type="number" class="input" name="l" min="0" step="any" placeholder="e.g. 4"></label>
+          <label>Width (w): <input type="number" class="input" name="w" min="0" step="any" placeholder="e.g. 3"></label>
+          <label>Height (h): <input type="number" class="input" name="h" min="0" step="any" placeholder="e.g. 2"></label>
+          <button class="calc-btn">Calculate</button>
+          <div class="result"></div>
+        </div>
+      </article>
+
+      <!-- New Shapes -->
+      <article class="card" data-shape="pyramid">
+        <div class="card-header">Square Pyramid</div>
+        <div class="card-body">
+          <label>Base side (a): <input type="number" class="input" name="a" min="0" step="any" placeholder="e.g. 4"></label>
+
+          
+
+          <label class="pyramid-input-h">Height (h): <input type="number" class="input" name="h" min="0" step="any" placeholder="e.g. 6"></label>
+          <label class="pyramid-input-s hidden">Slant height (s): <input type="number" class="input" name="s" min="0" step="any" placeholder="e.g. 6.324"></label>
+
+          <button class="calc-btn">Calculate</button>
+          <div class="result"></div>
+        </div>
+      </article>
+
+      <article class="card" data-shape="triangularprism">
+        <div class="card-header">Equilateral Triangular Prism</div>
+        <div class="card-body">
+          <label>Triangle side (a): <input type="number" class="input" name="a" min="0" step="any" placeholder="e.g. 3"></label>
+          <label>Prism length (L): <input type="number" class="input" name="L" min="0" step="any" placeholder="e.g. 8"></label>
+          <button class="calc-btn">Calculate</button>
+          <div class="result"></div>
+        </div>
+      </article>
+
+      <article class="card" data-shape="torus">
+        <div class="card-header">Torus</div>
+        <div class="card-body">
+          <label>Major radius (R): <input type="number" class="input" name="R" min="0" step="any" placeholder="e.g. 5"></label>
+          <label>Minor radius (r): <input type="number" class="input" name="r" min="0" step="any" placeholder="e.g. 1"></label>
+          <button class="calc-btn">Calculate</button>
+          <div class="result"></div>
+        </div>
+      </article>
+
+      <article class="card" data-shape="ellipsoid">
+        <div class="card-header">Ellipsoid</div>
+        <div class="card-body">
+          <label>Axis a: <input type="number" class="input" name="a" min="0" step="any" placeholder="e.g. 3"></label>
+          <label>Axis b: <input type="number" class="input" name="b" min="0" step="any" placeholder="e.g. 2"></label>
+          <label>Axis c: <input type="number" class="input" name="c" min="0" step="any" placeholder="e.g. 1.5"></label>
+          <button class="calc-btn">Calculate</button>
+          <div class="result"></div>
+        </div>
+      </article>
+
+      <article class="card" data-shape="hexprism">
+        <div class="card-header">Regular Hexagonal Prism</div>
+        <div class="card-body">
+          <label>Side (a): <input type="number" class="input" name="a" min="0" step="any" placeholder="e.g. 2"></label>
+          <label>Prism length (L): <input type="number" class="input" name="L" min="0" step="any" placeholder="e.g. 10"></label>
+          <button class="calc-btn">Calculate</button>
+          <div class="result"></div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">Made with ♥ — Geometry Calculator</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
